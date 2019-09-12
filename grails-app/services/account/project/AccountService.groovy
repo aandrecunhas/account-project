@@ -34,7 +34,24 @@ class AccountService {
     }
 
 
-    def show() {
+    def show(Long idAccount) {
+        Account account = Account.get(idAccount)
 
+        if(account) {
+            return [id: account.id, avaiableCreditLimit: account.avaiableCreditLimit, avaiableWithdrawalLimit: account.avaiableWithdrawalLimit]
+        }
+
+        return []
+    }
+
+    def showAll() {
+        List<Account> accounts = Account.list()
+        List<Map> accountListShow = []
+
+        accounts.each { account ->
+            accountListShow << show(account.id)
+        }
+
+        return accountListShow
     }
 }

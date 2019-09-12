@@ -33,11 +33,13 @@ class AccountServiceSpec extends Specification implements ServiceUnitTest<Accoun
     }
 
     void "Test account update"() {
+        Long idAccount
         given: "create an account"
-        Account account = new Account(avaiableWithdrawalLimit: 1000, avaiableCreditLimit: 1000)
-        account.save()
-        Long idAccount = account.id
-
+            Account.withTransaction {
+            Account account = new Account(avaiableWithdrawalLimit: 1000, avaiableCreditLimit: 1000)
+            account.save()
+            idAccount = account.id
+        }
         when: "Update an account"
         def result = accountService.save(avaiableCreditLimit, avaiableWithdrawalLimit, idAccount)
 
@@ -52,4 +54,44 @@ class AccountServiceSpec extends Specification implements ServiceUnitTest<Accoun
         -2000 | -1500 | "ALL_LIMIT_INVALID"
 
     }
+
+    void "Test account show"() {
+        given: "create an account"
+        Account.withTransaction {
+            Account account = new Account(avaiableWithdrawalLimit: 1000, avaiableCreditLimit: 1000, id: 1)
+            account.save()
+        }
+        when: "Select an account"
+        def result = accountService.show(idAccount)
+
+        then: "Result should be as expected"
+        result == expectedResult
+
+        where:
+        idAccount | expectedResult
+        1 | [id: 1, avaiableWithdrawalLimit: 1000, avaiableCreditLimit: 1000]
+        0 | []
+    }
+
+    void "Test account show all"() {
+        given: "create some accounts"
+        Account.withTransaction {
+            Account account = new Account(avaiableWithdrawalLimit: 1000, avaiableCreditLimit: 1000, id: 1)
+            account.save()
+
+            Account account2 = new Account(avaiableWithdrawalLimit: 2000, avaiableCreditLimit: 2000, id: 2)
+            account2.save()
+
+            Account account3 = new Account(avaiableWithdrawalLimit: 3000, avaiableCreditLimit: 3000, id: 3)
+            account3.save()
+        }
+        when: "Select an account"
+        def result = accountService.showAll()
+
+        then: "Result should be as expected"
+        result == [[id: 1, avaiableWithdrawalLimit: 1000, avaiableCreditLimit: 1000], [id: 2, avaiableWithdrawalLimit: 2000, avaiableCreditLimit: 2000], [id: 3, avaiableWithdrawalLimit: 3000, avaiableCreditLimit: 3000]]
+
+    }
+
+
 }
