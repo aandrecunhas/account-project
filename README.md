@@ -51,13 +51,13 @@ Para a utilização do sistema, por favor utilize o POSTMAN
 ## Diagrama de dados
 
 ## Testes Automatizados
-* Testes de Unidade
+* **Testes de Unidade**
  1) AccountSpec
  2) TransactionSpec
  
-* Testes de Integração
+* **Testes de Integração**
  1) AccountServiceSpec
  2) TransactionServiceSpec
  
-* Testes de Sistema
+* **Testes de Sistema**
  1) Projeto Postman
