@@ -23,6 +23,31 @@ Para a utilização do sistema, por favor utilize o POSTMAN
 
 ## Requisitos
 
+**Requisitos Funcionais**
+
+**RF1** - O sistema deve ser capaz de criar contas, as contas deve ter um limite de saque e um limite de crédito 
+
+**RF2** - O sistema deve permitir a modificação do limite de saque e crédito de uma conta
+
+**RF3** - O sistema deve exibir os limites de saque e crédito de uma conta
+
+**RF4** - O sistema deve permitir a criação de uma transação de compra à vista, compra parcelada de uma conta considerando o limite de crédito da mesma, ou seja, o saldo devedor dessas transações total nunca deverá ser maior que o limite
+
+**RF5** - O sistema deve permitir a criação de uma transação de saque considerando a somatória dos limites de saque e crédito, ou seja, o saldo devedor dessas transações nunca deve ser maior que a soma dos dois limites
+
+**RF6** - Ao realizar um pagamento o sistema deve criar uma transação e abater o valor do saldo das transações de crédito (à vista e parcelado) e saque de acordo com o número de ordem e  da data de criação da transação.
+
+**Requisitos Não Funcionais**
+
+**RNF1** - O sistema deverá ser colocado em um container Docker
+
+**RNF2** - O sistema deverá ter testes automatizados
+
+**RNF3** - O sistema deverá ter endpoints disponíveis para controlar as suas funcionalidades
+
+**RNF4** - Deverá ser utilizada a linguagem Groovy
+
+
 ## Diagrama de dados
 
 ## Testes Automatizados
