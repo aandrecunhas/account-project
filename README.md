@@ -27,7 +27,12 @@ Para a utilização do sistema, por favor utilize o POSTMAN
 
 ## Testes Automatizados
 * Testes de Unidade
-
+ - AccountSpec
+ - TransactionSpec
+ 
 * Testes de Integração
-
+ - AccountServiceSpec
+ - TransactionServiceSpec
+ 
 * Testes de Sistema
+ - Projeto Postman
