@@ -1,7 +1,5 @@
 package account.project
 
-import java.text.Bidi
-
 class Transaction {
 
     OperationType operationType
