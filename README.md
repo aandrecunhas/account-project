@@ -23,7 +23,7 @@ Para a utilização do sistema, por favor utilize o POSTMAN
 
 ## Requisitos
 
-## Diagrama de classe
+## Diagrama de dados
 
 ## Testes Automatizados
 * Testes de Unidade
