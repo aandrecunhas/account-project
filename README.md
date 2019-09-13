@@ -14,9 +14,9 @@ O sistema possui cinco end-points:
 
 1) (POST) account/create: Criar uma conta
 2) (PATCH) account/update: Atualizar uma conta
-3) (GET) account/limits: Visualiza todas as contas
-4) (POST) transaction/createTransaction: cria uma transação do tipo Compra à Vista, Compra Parcelada ou Saque
-5) (POST) transaction/createPayment: cria um pagamento (transação do tipo pagamento)
+3) (GET) account/limits: Visualizar todas as contas
+4) (POST) transaction/createTransaction: Criar uma transação do tipo compra à vista, compra parcelada ou saque
+5) (POST) transaction/createPayment: Criar um pagamento (transação do tipo pagamento)
 
 Para a utilização do sistema, por favor utilize o POSTMAN
 * Link do projeto postman: https://documenter.getpostman.com/view/6549976/SVmsW1RX?version=latest
