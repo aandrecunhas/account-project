@@ -50,6 +50,10 @@ Para a utilização do sistema, por favor utilize o POSTMAN
 
 ## Diagrama de dados
 
+<p align="center">
+  <img src="https://github.com/aandrecunhas/account-project/blob/master/Diagrama%20em%20branco.png">
+</p>
+
 ## Testes Automatizados
 * **Testes de Unidade**
  1) AccountSpec
